@@ -1,3 +1,6 @@
+from random_words import RandomWords
+
+
 class CommandLineInterface:
     def __init__(self):
         self.__display_banner()
@@ -28,7 +31,8 @@ class CommandLineInterface:
             if choice == "1":
                 self.__player_choose_word()
             elif choice == "2":
-                print(2)
+                user_word_len = self.__player_choose_word_len()
+                print(self.__generate_random_word(word_len=user_word_len))
             elif choice == "3":
                 running = False
             else:
@@ -42,10 +46,9 @@ class CommandLineInterface:
         print("3 - Quit")
 
     def __player_choose_word(self):
-        """
-        If multiplayer is chosen,
-        let one player enter the word for the other to guess.
-        """
+        # If multiplayer is chosen,
+        # let one player enter the word for the other to guess.
+
         valid_word = False
         while not valid_word:
             user_word = input("Enter a word for the other player to guess >> ")
@@ -55,6 +58,31 @@ class CommandLineInterface:
             else:
                 valid_word = True
                 return user_word
+
+    def __player_choose_word_len(self):
+        validInput = False
+        while not validInput:
+            try:
+                user_word_len = int(input("Enter the number of letters you "
+                                          "want the word to guess to contain "
+                                          ">> "))
+            except ValueError:
+                print("ERROR: Only enter a number")
+            else:
+                validInput = True
+        return user_word_len
+
+    def __generate_random_word(self, word_len=None):
+        rw = RandomWords()
+        if word_len is None:
+            word = rw.random_word()
+        else:
+            # random_words package only lets you set the min letter count
+            # and so keep generating words until one is the right length
+            word = rw.random_word(min_letter_count=word_len)
+            while len(word) != word_len:
+                word = rw.random_word(min_letter_count=word_len)
+        return word
 
 
 if __name__ == "__main__":
