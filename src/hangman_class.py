@@ -20,9 +20,11 @@ class Hangman:
 
     # Other
     def get_current_stage(self):
-        guesses_per_stage = self.__max_guesses / 7
-        stage_to_display = 7 - int(self.__guesses_remaining //
-                                   guesses_per_stage)
+        # 8 is the number of 'stage' files
+        guesses_per_stage = self.__max_guesses / 8
+        stage_to_display = int((self.__max_guesses - self.__guesses_remaining)
+                               / guesses_per_stage)
+        stage_to_display = max(0, min(stage_to_display, 8 - 1))
 
         # Create the full path to the ascii_art text file
         stage_filename = f"stage{stage_to_display}.txt"
