@@ -1,4 +1,5 @@
 from random_words import RandomWords
+import hangman_class
 
 
 class CommandLineInterface:
@@ -29,14 +30,24 @@ class CommandLineInterface:
                 "Enter the number of the menu option you want to select >> "
             )
             if choice == "1":
-                self.__player_choose_word()
+                word = self.__player_choose_word()
             elif choice == "2":
                 user_word_len = self.__player_choose_word_len()
-                print(self.__generate_random_word(word_len=user_word_len))
+                word = self.__generate_random_word(word_len=user_word_len)
             elif choice == "3":
                 running = False
             else:
                 print("Invalid menu option")
+
+            self.__game_loop(hangman_class.Hangman(word))
+
+    def __game_loop(self, hangman_game):
+        while hangman_game.get_guesses_remaining() != 0:
+            print("-----------------")
+            print(hangman_game.get_current_stage())
+            print("Guesses Remaining:", hangman_game.get_guesses_remaining())
+            print()
+            print("Word To Guess:", hangman_game.get_hidden_word())
 
     def __display_menu_options(self):
         print("Menu Options")
@@ -57,6 +68,11 @@ class CommandLineInterface:
                       "be at least two characters in length")
             else:
                 valid_word = True
+
+                # Print blank lines to hide the
+                for line in range(100):
+                    print()
+
                 return user_word
 
     def __player_choose_word_len(self):
