@@ -41,14 +41,6 @@ class CommandLineInterface:
 
             self.__game_loop(hangman_class.Hangman(word))
 
-    def __game_loop(self, hangman_game):
-        while hangman_game.get_guesses_remaining() != 0:
-            print("-----------------")
-            print(hangman_game.get_current_stage())
-            print("Guesses Remaining:", hangman_game.get_guesses_remaining())
-            print()
-            print("Word To Guess:", hangman_game.get_hidden_word())
-
     def __display_menu_options(self):
         print("Menu Options")
         print("------------")
@@ -99,6 +91,14 @@ class CommandLineInterface:
             while len(word) != word_len:
                 word = rw.random_word(min_letter_count=word_len)
         return word
+
+    def __game_loop(self, hangman_game):
+        while hangman_game.get_guesses_remaining() != 0:
+            print("-----------------")
+            print(hangman_game.get_current_stage())
+            print("Guesses Remaining:", hangman_game.get_guesses_remaining())
+            print()
+            print("Word To Guess:", hangman_game.get_hidden_word())
 
 
 if __name__ == "__main__":
