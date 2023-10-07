@@ -39,10 +39,12 @@ class CommandLineInterface:
             else:
                 print("Invalid menu option")
 
-            self.__game_loop(hangman_class.Hangman(word))
+            if choice in ["1", "2"]:
+                self.__game_loop(hangman_class.Hangman(word))
+                self.__display_menu_options()
 
     def __display_menu_options(self):
-        print("Menu Options")
+        print("\nMenu Options")
         print("------------")
         print("1 - Local Multiplayer")
         print("2 - Single player")
@@ -93,12 +95,30 @@ class CommandLineInterface:
         return word
 
     def __game_loop(self, hangman_game):
-        while hangman_game.get_guesses_remaining() != 0:
+        while (hangman_game.get_guesses_remaining() != 0 and
+               not hangman_game.is_word_guessed()):
             print("-----------------")
             print(hangman_game.get_current_stage())
             print("Guesses Remaining:", hangman_game.get_guesses_remaining())
             print()
             print("Word To Guess:", hangman_game.get_hidden_word())
+            user_guess = input("Guess a letter >> ")
+
+            result = hangman_game.check_user_guess(user_guess)
+            if result == "INVALID_GUESS":
+                print("ERROR: Invalid Guess. Guess must be a single letter")
+            elif result == "LETTER_ALREADY_GUESSED":
+                print("ERROR: Letter already guessed. Guess a different letter"
+                      )
+            elif result == "CORRECT_GUESS":
+                print("Correct guess!")
+            elif result == "INCORRECT_GUESS":
+                print("Incorrect guess!")
+        if hangman_game.get_guesses_remaining() == 0:
+            print("You lose! You ran out of guesses")
+            print("The word was", hangman_game.get_word_to_guess())
+        elif hangman_game.is_word_guessed():
+            print("")
 
 
 if __name__ == "__main__":

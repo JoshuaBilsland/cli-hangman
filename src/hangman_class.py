@@ -43,3 +43,23 @@ class Hangman:
             else:
                 hidden_word += "_"
         return hidden_word
+
+    def check_user_guess(self, user_guess):
+        if len(user_guess) != 1 or not user_guess.isalpha():
+            result = "INVALID_GUESS"
+        elif user_guess in self.__letters_guessed:
+            result = "LETTER_ALREADY_GUESSED"
+        elif user_guess in self.__word_to_guess:
+            result = "CORRECT_GUESS"
+            self.__letters_guessed.append(user_guess)
+        else:
+            result = "INCORRECT_GUESS"
+            self.__guesses_remaining -= 1
+        return result
+
+    def is_word_guessed(self):
+        # Check if all the letters of the word have been guessed
+        for letter in self.__word_to_guess:
+            if letter not in self.__letters_guessed:
+                return False
+        return True
