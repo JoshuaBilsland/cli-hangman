@@ -1,4 +1,11 @@
 ![Project banner](res/banner.png)
+
+<div align="center">
+    <img alt="GitHub last commit (branch)" src="https://img.shields.io/github/last-commit/JoshuaBilsland/cli-hangman/main">
+    <img alt="GitHub issues" src="https://img.shields.io/github/issues/JoshuaBilsland/cli-hangman">
+    <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/JoshuaBilsland/cli-hangman">
+</div>
+
 A command-line hangman game.
 
 
