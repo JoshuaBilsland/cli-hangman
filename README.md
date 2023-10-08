@@ -11,6 +11,23 @@
 
 ![Gif showing a demo of the program](res/demo.gif)
 
+# Installation Guide
+1. Clone this repository
+```
+git clone https://github.com/JoshuaBilsland/cli-hangman.git
+```
+2. Go into the repository
+```
+cd cli-hangman
+```
+3. [Create Python virtual environment](https://youtu.be/KxvKCSwlUv8)
+4. Install dependencies
+```
+pip install -r requirements.txt
+```
+5. Run `cli_class.py`
+
+
 # Project Purpose and Aims
 The main reason for creating this project is to improve my knowledge of conventions and getting into the habit of following them. I eventually want to try and get a degree apprenticeship in software development, and by learning industry conventions, it may improve my chances of getting one as well as making it easier for me to start working with a team of developers if I manage to get one. My previous projects did not really follow any industry conventions (although I was to some extent following my own that I had naturally started doing and what I had been taught at GCSEs and A-levels). Below is a list summarising the conventions I want to follow.
 
