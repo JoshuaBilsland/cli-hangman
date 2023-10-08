@@ -26,7 +26,16 @@ cd cli-hangman
 pip install -r requirements.txt
 ```
 5. Run `cli_class.py`
-
+   
+# Usage Guide
+The program has two game modes  
+![Image showing the main menu](res/usage_guide_menu_options.png)
+## Local Multiplayer
+If option `1` is selected on the main menu then local multiplayer will be selected. In this mode, one player can type in a word for the other player to guess.  
+![Image showing local multiplayer be selected](res/usage_guide_local_multiplayer.png)
+## Single Player
+If option `2` is selected on the main menu then single player will be selected. In this mode, the player enters how long of a word they want to guess. A word of that length will then be generated for them to guess.  
+![Image showing single player be selected](res/usage_guide_single_player.png)
 
 # Project Purpose and Aims
 The main reason for creating this project is to improve my knowledge of conventions and getting into the habit of following them. I eventually want to try and get a degree apprenticeship in software development, and by learning industry conventions, it may improve my chances of getting one as well as making it easier for me to start working with a team of developers if I manage to get one. My previous projects did not really follow any industry conventions (although I was to some extent following my own that I had naturally started doing and what I had been taught at GCSEs and A-levels). Below is a list summarising the conventions I want to follow.
