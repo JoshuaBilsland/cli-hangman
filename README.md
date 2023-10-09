@@ -62,3 +62,17 @@ The main reason for creating this project is to improve my knowledge of conventi
 - README Template - (https://github.com/JoshuaBilsland/my-conventions) 
 
 For more information please see https://github.com/JoshuaBilsland/my-conventions.
+
+# And Now for Something Completely Different, Post-Project Evaluation and Next Steps
+Now that my project is complete (other than a few sprinkles), I want to use this section to write out an evaluation of my project when compared to the ["Project Purpose and Aims" section](#project-purpose-and-aims) as well as talk about what I am planning to learn/do next. 
+## Project Successes
+Overall, this project has been successful. The main purpose of this project was to improve my knowledge of conventions (PEP8, 'Conventional Commits', and README layouts), and I believe I have done this. Although I still need to refer back to them occasionally, particularly PEP8, I do feel much more confident with them. On top of that, I now have a Hangman project! 🎉. As a bonus, I found myself starting to look into conventional ways of laying out a repository (what folders to use, what to call them, where different files belong, etc). I did not set out to do this (just yet) but it has been useful to start doing this.
+## Room for Improvement
+As I said in the previous section, I still find myself needing to refer back to the conventions occasionally, particularly when it comes to PEP8, as there is a lot to learn, so one area for improvement is to keep using these conventions (which I plan to do anyway) until they become second nature. I also mentioned in the previous section that I started looking into repository structure conventions, which I didn't intend to do for this project. I feel this was a mistake, and I should have looked into it along with the other conventions rather than planning to leave it to a separate project (which I was going to do by creating a project that would involve many files and folders so that I could really focus on a good structure). A final area for improvement is when it comes to committing. I now feel pretty confident with writing 'Conventional Commits', but I still feel I am struggling to identify WHEN to commit. With all that said...
+## Next Steps
+- Practice with PEP8
+- Learning and practicing repository structure
+- Get better at identifying when I should be committing
+- Learning how to use Git branches
+- Learning good software design
+- I am currently reading through "The Pragmatic Programmer" which talks about good programming practice and software design. My next big focus is to go further with this and learn much more about good software design and writing better code (in terms of principles to follow, breaking things down into multiple functions, how to separate code into different files, etc).
