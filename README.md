@@ -11,6 +11,20 @@
 
 ![Gif showing a demo of the program](res/demo.gif)
 
+# Table of Contents
+
+- [Installation Guide](#installation-guide)
+- [Usage Guide](#usage-guide)
+  - [Local Multiplayer](#local-multiplayer)
+  - [Single Player](#single-player)
+- [Configuration Guide](#configuration-guide)
+  - [Changing the Number of Guesses](#changing-the-number-of-guesses)
+- [Project Purpose and Aims](#project-purpose-and-aims)
+- [And Now for Something Completely Different, Post-Project Evaluation and Next Steps](#and-now-for-something-completely-different-post-project-evaluation-and-next-steps)
+  - [Project Successes](#project-successes)
+  - [Room for Improvement](#room-for-improvement)
+  - [Next Steps](#next-steps)
+
 # Installation Guide
 1. Clone this repository
 ```
@@ -38,7 +52,7 @@ If option `2` is selected on the main menu then single player will be selected. 
 ![Image showing single player be selected](res/usage_guide_single_player.png)
 
 # Configuration Guide
-## Changing the number of guesses
+## Changing the Number of Guesses
 The `Hangman` class has been designed so that the `max_guesses` variable can be increased or decreased to make the game easier or more difficult. The `get_current_stage` method is able to 'evenly' distribute the ASCII art stage files so that the drawing of the hangman is updated in a way that is balanced with `max_guesses`. For example, if you double the number of `max_guesses`, from 7 to 14, rather than display one stage per incorrect guess, instead the next stage will be displayed after every two incorrect guesses.
 
 To change `max_guesses`, go to the `hangman_class.py` file in the `src` folder. Go to the constructor of the class and edit the value of `self.__max_guesses`.
@@ -75,4 +89,4 @@ As I said in the previous section, I still find myself needing to refer back to 
 - Get better at identifying when I should be committing
 - Learning how to use Git branches
 - Learning good software design
-- I am currently reading through "The Pragmatic Programmer" which talks about good programming practice and software design. My next big focus is to go further with this and learn much more about good software design and writing better code (in terms of principles to follow, breaking things down into multiple functions, how to separate code into different files, etc).
+- I am currently reading through "The Pragmatic Programmer" which talks about good programming practices and software design. My next big focus is to go further with this and learn much more about good software design and writing better code (in terms of principles to follow, breaking things down into multiple functions, how to separate code into different files, etc).
